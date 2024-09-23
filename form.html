@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<style>
+body {
+  font-family: "Audiowide", sans-serif;
+  font-size: 17px;
+  padding: 8px;
+  background: #383838;
+}
+
+* {
+  box-sizing: border-box;
+}
+h2 {
+  text-align: center;
+  color: #ccc;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; 
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; 
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+.cvv {
+  width: 100%;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  font-family: "Audiowide", sans-serif;
+  background-color: #04AA6D;
+  border-radius: 4px;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #57895a;
+}
+
+a {
+  color: #2196F3;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  align-items: left;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+  <a href="gallery.html">Back</a>
+  <h2>Booking Form</h2>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form>
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Full Name">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="Address">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="City">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">Province</label>
+                <input type="text" id="state" name="state" placeholder="Province">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="Zip Code">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Enter the card name">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Enter Exp Month">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="Enter Exp Year">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" class="cvv" placeholder="Enter CVV">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to book" class="btn" onclick="onSubmitForm()">
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function onSubmitForm() {
+    var successMessage = document.getElementById("successMessage");
+    
+    console.log("Form submitted!");
+    
+    successMessage.innerHTML = "Successfully booked!";
+    successMessage.style.display = "block";
+    }
+
+  </script>
+  <div class="col-25">
+    <div class="container">
+      <h4>Desire Car <span class="price" style="color:black"></span></h4>
+      <label for="cars">Choose a car:</label>
+      <select id="cars" name="cars" onclick="displayPrice()">
+      <option value="cars">Cars</option>
+      <option value="bc">Black Cardillac</option>
+      <option value="con">Convertible</option>
+      <option value="sc">Sports Car</option>
+      <option value="co">Crossover</option>
+      <option value="cpe">Coupe</option>
+      <option value="pt">PickUp Truck</option>
+      <option value="hb">Hatch Back</option>
+      <option value="mv">Mini Van</option>
+      <option value="se">Sedan</option>
+      <option value="su">SUV</option>
+      <option value="sw">Station Wagon</option>
+      <option value="v">Van</option>
+      </select>
+
+<div id="priceDisplay"></div>
+
+  <script>
+    function displayPrice() {
+        var selectedCar = document.getElementById("cars").value;
+        var priceDisplay = document.getElementById("priceDisplay");
+
+        switch (selectedCar) {
+            case "cars":
+                priceDisplay.innerHTML = ""; 
+                break;
+            case "bc":
+                priceDisplay.innerHTML = "Price: Php4,000/day"; 
+                break;
+            case "con":
+                priceDisplay.innerHTML = "Price: Php4,000/day"; 
+                break;
+            case "sc":
+                priceDisplay.innerHTML = "Price: Php4,000/day"; 
+                break;
+            case "co":
+                priceDisplay.innerHTML = "Price: Php3,000/day"; 
+                break;
+            case "cpe":
+                priceDisplay.innerHTML = "Price: Php4,000/day"; 
+                break;
+            case "pt":
+                priceDisplay.innerHTML = "Price: Php3,500/day"; 
+                break;
+            case "hb":
+                priceDisplay.innerHTML = "Price: Php3,500/day"; 
+                break;
+            case "mv":
+                priceDisplay.innerHTML = "Price: Php3,500/day"; 
+                break;
+            case "se":
+                priceDisplay.innerHTML = "Price: PPhp3,500/day"; 
+                break;
+            case "su":
+                priceDisplay.innerHTML = "Price: Php3,000/day"; 
+                break;
+            case "sw":
+                priceDisplay.innerHTML = "Price: Php3,000/day"; 
+                break;
+            case "v":
+                priceDisplay.innerHTML = "Price: Php3,000/day"; 
+                break;
+                
+            default:
+                priceDisplay.innerHTML = ""; 
+                break;
+        }
+    }
+    </script>
+    <label for="days">Number of days:</label>
+    <input type="number" id="days" name="days" min="1" value="1" onchange="updatePrice()">
+    
+    <div id="priceDisplay"></div>
+    
+    <script>
+        function updatePrice() {
+            var selectedCar = document.getElementById("cars").value;
+            var rentalDays = document.getElementById("days").value;
+            var priceDisplay = document.getElementById("priceDisplay");
+    
+            var carPrices = {
+                "volvo": 0, 
+                "Black Cadillac": 4000 
+            };
+    
+            var totalPrice = carPrices[selectedCar] * rentalDays;
+    
+            
+            priceDisplay.innerHTML = "Total Price: Php" + totalPrice; 
+        }
+    </script>
+
+      <hr>
+      
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="ind-styles.css">
+        <title>Voiture Louer</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+              <a href="home.html">
+              <img src="images/android-chrome-192x192.png" style="height: 85px;" alt="Voiture Louer" class="ar">
+              </a>
+            </div>
+        </header>
+            <div id="menu">
+            <ul>
+                <li class="current_page_item"><a href="#" accesskey="1" title="">Home</a></li>
+                <li><a href="about_us.html" accesskey="2" title="">About Us</a></li>
+                <li><a href="services.html" accesskey="3" title="">Services</a></li>
+                <li><a href="gallery.html" accesskey="4" title="">GALLERY</a></li>
+                <li><a href="loginseller.html" accesskey="5" title="">Seller Portal</a></li>
+            </ul>
+        </div>
+        <div id="header-featured"> 
+            <div class="images">
+              <img class="mySlides" src="images/pc1.jpg" style="width:100%">
+              <img class="mySlides" src="images/pc2.jpg" style="width:100%">
+              <img class="mySlides" src="images/pc3.jpg" style="width:100%">
+              <img class="mySlides" src="images/pc4.jpg" style="width:100%">
+              <img class="mySlides" src="images/pc5.jpg" style="width:100%">
+              <div class="text">Voiture Louer
+              <span>Drive Calmly To Get Home Safely.</span>
+              <button class="btn">
+                <a href="gallery.html">
+                Let's Explore</a>
+              </button>
+              </div>
+            </div>
+            
+            <script>
+                var myIndex = 0;
+                carousel();
+                
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                    setTimeout(carousel, 2500); 
+                }
+                </script>
+            <script>
+                $(document).ready(function() {
+                  function checkWindowWidth() {
+                    var windowWidth = $(window).width();
+                    if (windowWidth < 600) {
+                      $('.menu-icon').addClass('resized');
+                    } else {
+                      $('.menu-icon').removeClass('resized');
+                    }
+                  }
+            
+                  checkWindowWidth();
+            
+                  $(window).resize(function() {
+                    checkWindowWidth();
+                  });
+                });
+              </script>
+    </body>
+</html>

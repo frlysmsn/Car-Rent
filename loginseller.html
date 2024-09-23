@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="log-style.css">
+        <title>Voiture Louer</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    </head>
+    <body>
+        <header>
+          <div class="logo">
+            <a href="home.html">
+            <img src="images/android-chrome-192x192.png" style="height: 85px;" alt="Voiture Louer" class="ar">
+            </a>
+          </div>
+        </header>
+        <div id="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about_us.html" accesskey="2" title="">About Us</a></li>
+                <li><a href="services.html" accesskey="3" title="">Services</a></li>
+                <li><a href="gallery.html" accesskey="4" title="">GALLERY</a></li>
+                <li class="current_page_item"><a href="loginseller.html" accesskey="5" title="">Seller Portal</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <img src="voiture-removebg-preview.png" class="pic">
+            <h1 class="adtext">Seller</h1>
+            <img src="security.png">
+            <form id="login-form" onsubmit="login(event)">
+              <div class="field">
+                <img src="email.png" class="input-icon">
+                <input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail" type="email">
+              </div>
+              <div class="field">
+                <img src="padlock.png" class="input-icon"><input autocomplete="off" id="logpass" placeholder="Password" class="input-field" name="logpass" type="password">
+              </div>
+              <button class="btn" type="submit">Login</button>
+              <a href="forgot_password.html" class="btn-link">Forgot your password?</a>
+            </form>
+          </div>
+          
+          <script>
+            function login(event) {
+                event.preventDefault();
+    
+                var email = document.getElementById('logemail').value;
+                var password = document.getElementById('logpass').value;
+    
+                if (email === 'seller@example.com' && password === 'seller123') {
+                    alert('Login successful!');
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Invalid credentials. Please try again.');
+                }
+            }
+        </script>
+
+    </body>
+</html>
